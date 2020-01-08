@@ -1,0 +1,26 @@
+var mapCheck = function(){
+    var output = {check_id : this.ID, client_name : null, client_id : this.CLIENT_ID};
+    emit(this.CLIENT_ID, output);
+};
+
+var mapClient = function(){
+    var output = {check_id : null, client_name : this.NAME, client_id : this.ID};
+    emit(this.ID, output);
+};
+
+var reduce = function(key, values){
+    var outs = {check_id : null, client_name : null};
+    values.forEach(function(v){
+        if(outs.check_id == null){
+            outs.check_id = v.check_id;
+        }
+        if(outs.client_name == null){
+            outs.client_name = v.client_name
+        }
+    });
+    return outs;
+};
+
+result = db.check.mapReduce(mapCheck, reduce, {out: {reduce: 'check_client'}});
+result = db.client.mapReduce(mapClient, reduce, {out: {reduce: 'check_client'}});
+db.check_client.find();

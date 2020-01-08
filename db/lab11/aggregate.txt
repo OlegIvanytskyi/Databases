@@ -1,0 +1,46 @@
+db.room.aggregate([    
+    {$match: {PRICE: {$gt: 500}}},
+    {
+        $group:
+        {
+            _id: null,
+            count: {$sum: 1}
+        }
+    }
+]);
+
+db.room.aggregate([    
+    {
+        $group:
+        {
+            _id: '$COMFORT',
+            average_price: {$avg: '$PRICE'}
+        }
+    }
+]);
+
+db.room.aggregate([    
+    {
+        $group:
+        {
+            _id: '$COMFORT',
+            average_price: {$avg: '$PRICE'}
+        }
+    },
+    {
+        $sort: {average_price: 1}
+    }
+]);
+
+db.room.aggregate([    
+    {
+        $group:
+        {
+            _id: '$COMFORT',
+            average_price: {$avg: '$PRICE'}
+        }
+    },
+    {
+        $limit: 3
+    }
+]);

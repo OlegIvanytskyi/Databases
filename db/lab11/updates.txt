@@ -1,0 +1,70 @@
+db.check.update(
+    {'ID' : 1},
+    {$set : 
+    {
+        'ROOM' : {'PRICE' : 150, 'CAPACITY' : 1, 'COMFORT' : 'low'},
+        'CLIENT' : {'NAME' : 'JAKE PERALTA', 'PASSPORT' : 123456, 'PHONE_NUMBER' : 1234567890}    
+    }
+    }       
+);
+
+db.check.update(
+    {'ID' : 2},
+    {$set : 
+    {
+        'ROOM' : {'PRICE' : 700, 'CAPACITY' : 1, 'COMFORT' : 'high'},
+        'CLIENT' : {'NAME' : 'NIKOLA TESLA', 'PASSPORT' : 123457, 'PHONE_NUMBER' : 1234545890}    
+    }
+    }       
+);
+
+db.check.update(
+    {'ID' : 3},
+    {$set : 
+    {
+        'ROOM' : {'PRICE' : 1000, 'CAPACITY' : 2, 'COMFORT' : 'high'},
+        'CLIENT' : {'NAME' : 'CHRIS EVANS', 'PASSPORT' : 123467, 'PHONE_NUMBER' : 1244545890}    
+    }
+    }       
+);
+
+db.check.update(
+    {'ID' : 4},
+    {$set : 
+    {
+        'ROOM' : {'PRICE' : 1500, 'CAPACITY' : 2, 'COMFORT' : 'luxury'},
+        'CLIENT' : {'NAME' : 'TIRION LANNISTER', 'PASSPORT' : 123567, 'PHONE_NUMBER' : 1244445890}    
+    }
+    }       
+);
+
+db.check.update(
+    {'ID' : 5},
+    {$set : 
+    {
+        'ROOM' : {'PRICE' : 5000, 'CAPACITY' : 10, 'COMFORT' : 'party'},
+        'CLIENT' : {'NAME' : 'SAMUEL JACKSON', 'PASSPORT' : 124567, 'PHONE_NUMBER' : 1344445890}    
+    }
+    }       
+);
+
+db.check.update(
+    {'ID' : 6},
+    {$set : 
+    {
+        'ROOM' : {'PRICE' : 350, 'CAPACITY' : 1, 'COMFORT' : 'medium'},
+        'CLIENT' : {'NAME' : 'RICK BRADLY', 'PASSPORT' : 134567, 'PHONE_NUMBER' : 1344445840}    
+    }
+    }       
+);
+
+db.check.update(
+    {'ID' : 7},
+    {$set : 
+    {
+        'ROOM' : {'PRICE' : 450, 'CAPACITY' : 2, 'COMFORT' : 'medium'},
+        'CLIENT' : {'NAME' : 'ROSA DIAZ', 'PASSPORT' : 234567, 'PHONE_NUMBER' : 1345545840}    
+    }
+    }       
+);
+
